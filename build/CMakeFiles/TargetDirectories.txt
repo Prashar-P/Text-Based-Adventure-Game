@@ -1,0 +1,3 @@
+/mnt/c/Users/Priya Prashar/Documents/Projects/TextBasedPP/TextBasedGamePP/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Priya Prashar/Documents/Projects/TextBasedPP/TextBasedGamePP/build/CMakeFiles/pokemon.dir
+/mnt/c/Users/Priya Prashar/Documents/Projects/TextBasedPP/TextBasedGamePP/build/CMakeFiles/edit_cache.dir
