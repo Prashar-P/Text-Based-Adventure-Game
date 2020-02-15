@@ -9,6 +9,7 @@ enum Direction{
 
 class IMap{
     public:
-        virtual void updateMap() = 0;
+        virtual void generateMap(std::string mapName) =0;
+        virtual void printMap() = 0;
         virtual bool movePlayer(Direction newMovement) =0;
 };
