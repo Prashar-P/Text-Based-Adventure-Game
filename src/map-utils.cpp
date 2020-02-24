@@ -1,7 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include "map-utils.h"
-#include "lib/strutils.h"
+#include <ncurses.h>
+#include <cstdlib>
+
+
 
 Map::Map()
     :newMap(),
@@ -69,6 +72,30 @@ void Map::clear(){
     system("clear");
 }
 
+
 bool Map::movePlayer(Direction newMovement){
+    char key;
+    initscr();
+    key = getch();
+    endwin();
+    switch(key)
+    {
+        case 'w':{
+         std:: cout <<"w was pressed" << std::endl;
+         break;    
+        }
+        case 's':{
+         std:: cout << "s was pressed" << std :: endl;
+         break;   
+        }
+        case 'a':{
+        std::cout << "a was pressed" << std :: endl;
+        break;    
+        }
+        case 'd':{
+            std:: cout << "d was pressed" << std:: endl;
+            break;
+        }
+    }
 
 }

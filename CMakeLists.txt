@@ -7,5 +7,9 @@ include_directories(src/include)
 #Can manually add the sources using the set command as follows:
 set(SOURCES src/main.cpp
 	    src/map-utils.cpp)
- 
+
 add_executable(pokemon ${SOURCES})
+
+target_link_libraries(pokemon PUBLIC ncurses)
+
+
