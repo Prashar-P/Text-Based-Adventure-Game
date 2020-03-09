@@ -1,10 +1,10 @@
 #pragma once
 
 enum Direction{
-    LEFT = 'a', //<- Used to move left 
-    RIGHT = 'd', //<- Used to move right
-    UP = 'w', //<- Used to move up
-    DOWN = 's'//<-Used to move down
+    LEFT, //<- Used to move left 
+    RIGHT, //<- Used to move right
+    UP,  //<- Used to move up
+    DOWN //<-Used to move down
 };
 
 class IMap{
@@ -13,3 +13,5 @@ class IMap{
         virtual void printMap() = 0;
         virtual bool movePlayer(Direction newMovement) =0;
 };
+
+

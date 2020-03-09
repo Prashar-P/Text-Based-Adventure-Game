@@ -49,12 +49,12 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 build cmake_object_order_depends_target_pokemon: phony
 build CMakeFiles/pokemon.dir/src/main.cpp.o: CXX_COMPILER__pokemon ../src/main.cpp || cmake_object_order_depends_target_pokemon
   DEP_FILE = CMakeFiles/pokemon.dir/src/main.cpp.o.d
-  INCLUDES = -I../src/include
+  INCLUDES = -I../src/lib
   OBJECT_DIR = CMakeFiles/pokemon.dir
   OBJECT_FILE_DIR = CMakeFiles/pokemon.dir/src
 build CMakeFiles/pokemon.dir/src/map-utils.cpp.o: CXX_COMPILER__pokemon ../src/map-utils.cpp || cmake_object_order_depends_target_pokemon
   DEP_FILE = CMakeFiles/pokemon.dir/src/map-utils.cpp.o.d
-  INCLUDES = -I../src/include
+  INCLUDES = -I../src/lib
   OBJECT_DIR = CMakeFiles/pokemon.dir
   OBJECT_FILE_DIR = CMakeFiles/pokemon.dir/src
 
@@ -67,7 +67,7 @@ build CMakeFiles/pokemon.dir/src/map-utils.cpp.o: CXX_COMPILER__pokemon ../src/m
 
 build pokemon: CXX_EXECUTABLE_LINKER__pokemon CMakeFiles/pokemon.dir/src/main.cpp.o CMakeFiles/pokemon.dir/src/map-utils.cpp.o
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lncurses
+  LINK_LIBRARIES = -lncurses -lsqlite3
   OBJECT_DIR = CMakeFiles/pokemon.dir
   POST_BUILD = :
   PRE_LINK = :
