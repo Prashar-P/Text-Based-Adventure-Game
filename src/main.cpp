@@ -8,6 +8,8 @@
 
 
 int main(){ 
+    char key;
+
     std::system("clear");
     std::cout << "\033[1;33mPokemon\033[0m" << std::endl << std::endl;
     std:: cout << " 1. Start Game" << std::endl;
@@ -58,39 +60,43 @@ int main(){
     newMap.generateMap("../maps/map_01.txt");
     newMap.printMap();
     auto x = newMap.getPlayerLocation();
-    while (true){
-        initscr(); 
-        char key = getchar();  
-        switch(key)
-        {
-            case 'w':{
-            newMap.movePlayer(Direction::UP);
-            std::system("clear");
-            newMap.printMap();
-            break;
+    while(key != 'x'){
+        while (true){
+            initscr(); 
+            key = getchar();
+            switch(key)
+            {
+                case 'w':{
+                newMap.movePlayer(Direction::UP);
+                std::system("clear");
+                newMap.printMap();
+                break;
+                }
+                case 's':{
+                newMap.movePlayer(Direction::DOWN);
+                std::system("clear");
+                newMap.printMap();
+                break;
+                }
+                case 'a':{
+                newMap.movePlayer(Direction::LEFT);
+                std::system("clear");
+                newMap.printMap();
+                break;  
+                }
+                case 'd':{
+                newMap.movePlayer(Direction::RIGHT);
+                std::system("clear");
+                newMap.printMap();
+                break;
+                }
             }
-            case 's':{
-            newMap.movePlayer(Direction::DOWN);
-            std::system("clear");
-            newMap.printMap();
-            break;
-            }
-            case 'a':{
-            newMap.movePlayer(Direction::LEFT);
-            std::system("clear");
-            newMap.printMap();
-            break;  
-            }
-            case 'd':{
-            newMap.movePlayer(Direction::RIGHT);
-            std::system("clear");
-            newMap.printMap();
-            readPokemon();
-            break;
-            }
+        int chance = rand() % 101;
+        if (chance <= 20)
+            std::cout << "call pokemon" << std::endl;
+           // readPokemon();
         }
     }
-
 }
     
     //newMap.movePlayer(Direction::DOWN);

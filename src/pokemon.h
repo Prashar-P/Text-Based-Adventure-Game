@@ -2,6 +2,17 @@
 #include <string>
 #include "lib/sqlite3.h"
 
+class Pokemon{
+
+static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
+   int i;
+   for(i = 0; i<argc; i++) {
+      printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+   }
+   printf("\n");
+   return 0;
+}
+
 int readPokemon(){
   //https://www.tutorialspoint.com/sqlite/sqlite_c_cpp.htm
   sqlite3 *db;
@@ -23,16 +34,18 @@ int readPokemon(){
    sql = "SELECT pokedex_number FROM Pokemon";
 
    /* Execute SQL statement */
-   rc = sqlite3_exec(db, sql, 0, 0, &zErrMsg);
+   rc = sqlite3_exec(db, sql, callback, NULL, &zErrMsg);
    
    if( rc != SQLITE_OK ) {
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    } else {
-      fprintf(stdout, "Operation done successfully\n");
+      fprintf(stdout, "Successful \n");
    }
    sqlite3_close(db);
    return 0;
 
 }
+
+};
 
